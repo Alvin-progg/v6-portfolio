@@ -7,8 +7,8 @@ export default function Header() {
         <Image
           src="/pfp.jpg"
           alt="Alvin Aloya"
-          width={40}
-          height={40}
+          width={50}
+          height={50}
           className="rounded-full object-cover"
         />
         <div>
