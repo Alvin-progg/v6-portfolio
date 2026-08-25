@@ -1,2 +1,40 @@
 @import "tailwindcss";
 
+/* Design tokens — see DESIGN.md. Warm near-black palette, no pure #000/#FFF. */
+@theme {
+  --color-bg: #0f1011; /* page background */
+  --color-fg: #f4f2ed; /* primary text, emphasis, links */
+  --color-muted: #aaa7a1; /* body copy, descriptions */
+  --color-dim: #716f6a; /* tertiary meta, corner labels */
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+}
+
+/* Raw vars for non-utility use (matches token names in DESIGN.md). */
+:root {
+  --bg: #0f1011;
+  --text: #f4f2ed;
+  --text-muted: #aaa7a1;
+  --text-dim: #716f6a;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Calm by default: honor reduced-motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

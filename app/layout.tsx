@@ -1,16 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 
+// --- Active font: Geist (placeholder until Satoshi files land) ---
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+// --- Satoshi swap (see app/fonts/README.md) --------------------------------
+// The design target is Satoshi. Once the .woff2 files are in app/fonts/,
+// switch to this and apply `satoshi.variable` on <html> instead of geistSans,
+// and point --font-sans in globals.css at `var(--font-satoshi)`:
+//
+// import localFont from "next/font/local";
+// const satoshi = localFont({
+//   variable: "--font-satoshi",
+//   src: [
+//     { path: "./fonts/Satoshi-Regular.woff2", weight: "400", style: "normal" },
+//     { path: "./fonts/Satoshi-Medium.woff2",  weight: "500", style: "normal" },
+//     { path: "./fonts/Satoshi-Bold.woff2",    weight: "600", style: "normal" },
+//   ],
+// });
+// ---------------------------------------------------------------------------
 
 export const metadata: Metadata = {
   title: "Alvin Aloya",
@@ -21,7 +33,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
