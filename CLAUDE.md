@@ -21,6 +21,11 @@ No test runner is configured in this repo.
 
 - App Router project, all routes/layouts live under `app/`. `app/layout.tsx` is the root layout (Geist Sans/Mono via `next/font/google`, exposed as CSS vars `--font-geist-sans`/`--font-geist-mono`).
 - Styling is Tailwind CSS v4 via `@tailwindcss/postcss` (`postcss.config.mjs`), applied through `app/globals.css`.
-- Path alias `@/*` maps to repo root (`tsconfig.json`).
-- Components go under `app/components/` (e.g. `app/components/Nav.tsx`); mark client components with `"use client"` explicitly — the default is Server Components.
-- This is a personal portfolio site (owner: Alvin Aloya), currently minimal/scaffold stage.
+- Path alias `@/*` maps to repo root (`tsconfig.json`), **not** `app/`. Components physically live in `app/components/`, so working imports must say `@/app/components/Nav`, not `@/components/Nav`.
+- Components go under `app/components/` (e.g. `app/components/Nav.tsx`, `Hero.tsx`, `Blog.tsx`, `Experience.tsx`, `Hackathon.tsx`); mark client components with `"use client"` explicitly — the default is Server Components.
+- This is a personal portfolio site (owner: Alvin Aloya), currently minimal/scaffold stage — most existing components aren't wired into `page.tsx` yet.
+
+## Design & build plan
+
+- `DESIGN.md` — the target visual spec (modeled on edwarddiesta.com): warm near-black palette (`#0F1011` bg / `#F4F2ED` text / `#AAA7A1` muted / `#716F6A` dim), single centered `max-width: 512px` column, Satoshi typeface (self-hosted, not yet added — repo currently loads Geist instead), lowercase section labels, no cards/borders/shadows. Read this before styling anything.
+- `plan.md` — component-by-component build plan derived from `DESIGN.md` (Header, Intro, SectionBlock/ListItem primitives, Notes/Projects/Experience/Testimonials/Hackathons/Certifications/Misc/Contact sections, optional CornerLabels/FloatingDock). Follow its build order (Foundation → Primitives → Content components → Page composition) and its note that `Nav.tsx` should be deleted or repurposed as `FloatingDock` since the target design has no top nav.
