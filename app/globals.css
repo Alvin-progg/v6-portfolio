@@ -7,7 +7,7 @@
   --color-muted: #aaa7a1; /* body copy, descriptions */
   --color-dim: #716f6a; /* tertiary meta, corner labels */
 
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+  --font-sans: var(--font-satoshi), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", sans-serif;
 }
 

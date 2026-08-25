@@ -9,9 +9,6 @@ type SectionBlockProps = {
   children: ReactNode;
 };
 
-// The repeating section wrapper: a lowercase label, an optional "view all"
-// link, and a spaced list of children. Sections are separated by whitespace
-// only — no rules, no backgrounds (see DESIGN.md).
 export default function SectionBlock({
   label,
   viewAllHref,
