@@ -1,4 +1,7 @@
 import Column from "@/app/components/Column";
+import PlaygroundPanel from "@/app/components/playground/PlaygroundPanel";
+import GithubWidget from "@/app/components/playground/GithubWidget";
+import FloatingDock from "@/app/components/FloatingDock";
 import Header from "@/app/components/Header";
 import Intro from "@/app/components/Intro";
 import Blog from "@/app/components/sections/Blog";
@@ -18,18 +21,22 @@ import contact from "@/app/data/contact.json";
 
 export default function Home() {
   return (
-    <Column>
-      <div className="flex flex-col gap-10">
-        <Header />
-        <Intro />
-        <Blog posts={blog} />
-        <Projects projects={projects} />
-        <Experience roles={experience} />
-        <Testimonials quotes={testimonials} />
-        <Hackathons events={hackathons} />
-        <Misc items={misc} />
-        <Contact {...contact} />
-      </div>
-    </Column>
+    <>
+      <PlaygroundPanel githubWidget={<GithubWidget />} />
+      <Column>
+        <div className="flex flex-col gap-10">
+          <Header />
+          <Intro />
+          <Blog posts={blog} />
+          <Projects projects={projects} />
+          <Experience roles={experience} />
+          <Testimonials quotes={testimonials} />
+          <Hackathons events={hackathons} />
+          <Misc items={misc} />
+          <Contact {...contact} />
+        </div>
+      </Column>
+      <FloatingDock />
+    </>
   );
 }
