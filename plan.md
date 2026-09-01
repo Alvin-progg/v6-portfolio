@@ -154,21 +154,15 @@ Each component below lists: **Purpose · File · Props/Data · Structure · Styl
 - **Structure:** `SectionBlock label="hackathons"` → `ListItem` list.
 - **Reference:** `hackathons` (eGovPH Hackathon 2026…).
 
-### 14. Certifications
 
-- **File:** `app/components/sections/Certifications.tsx`
-- **Props/Data:** `certs: { title; issuer }[]`
-- **Structure:** `SectionBlock label="certifications"` → per item: title (600) + issuer (`--text-muted`).
-- **Reference:** `certifications` (Machine Learning Specialization / DeepLearning.AI…).
-
-### 15. Misc
+### 14. Misc
 
 - **File:** `app/components/sections/Misc.tsx`
 - **Props/Data:** `items: { title; description; href }[]`
 - **Structure:** `SectionBlock label="misc" viewAllHref` → `ListItem` list.
 - **Reference:** `misc` (MISA Python Workshop…).
 
-### 16. Contact ("say hi")
+### 15. Contact ("say hi")
 
 - **Purpose:** Closing contact block.
 - **File:** `app/components/sections/Contact.tsx`
@@ -200,11 +194,7 @@ Each component below lists: **Purpose · File · Props/Data · Structure · Styl
 - **Reference:** the centered bottom dock on edwarddiesta.com.
 - **Notes:** `"use client"` if buttons act (theme toggle). Skip for a first pass; it's not core to the look.
 
-### 19. Nav.tsx — resolve existing file
 
-- **Current state:** `app/components/Nav.tsx` is an empty `"use client"` component (`<nav className="bg-gray-800 p-4">`).
-- **Decision needed:** the reference site has **no top nav**. Either **delete** `Nav.tsx`, or **repurpose** it as `FloatingDock` (item 18). Recommend delete unless the dock is wanted.
-- **Notes:** The `bg-gray-800` placeholder does not fit the palette — remove it regardless.
 
 ---
 

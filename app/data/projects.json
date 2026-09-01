@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Fieldnotes",
+    "description": "A lightweight journaling app for engineers to log decisions and incidents as they happen, not after.",
+    "href": "#"
+  },
+  {
+    "title": "Driftboard",
+    "description": "A kanban board that automatically ages and resurfaces stale cards instead of letting them rot silently.",
+    "href": "#"
+  },
+  {
+    "title": "Warmlight",
+    "description": "An experiment in generating accessible dark-mode color palettes from a single warm base color."
+  }
+]

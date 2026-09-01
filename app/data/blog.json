@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Debugging Is Reading Comprehension",
+    "summary": "Most bugs I've chased down turned out to be a wrong assumption I made three files upstream, not a broken feature.",
+    "href": "#"
+  },
+  {
+    "title": "Small Tools, Kept Sharp",
+    "summary": "A shortlist of the scripts and CLI tricks I reach for weekly, and why I keep rewriting the same three utilities.",
+    "href": "#"
+  },
+  {
+    "title": "On Shipping Slowly",
+    "summary": "Notes on why I've started favoring fewer, better-tested releases over a constant drip of small ones."
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Software Engineer",
+    "company": "Conexsus",
+    "description": "Building and maintaining internal tooling for a small platform team, with a focus on developer experience.",
+    "dates": "2025 — present"
+  },
+  {
+    "title": "Cloud Engineer",
+    "company": "Conexsus",
+    "description": "Designing, deploying, and managing cloud infrastructure and services. Experienced with cloud environments, server management, networking, deployment, and infrastructure automation, with a focus on building reliable and scalable systems.",
+    "dates": "2022 — 2024"
+  },
+  {
+    "title": "Freelance Developer",
+    "company": "Independent",
+    "description": "Built small websites and internal tools for early-stage startups and local businesses.",
+    "dates": "2023 — Present"
+  }
+]
