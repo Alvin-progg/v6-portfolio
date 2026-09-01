@@ -3,11 +3,11 @@
 import { useEffect, useRef, useState } from "react";
 import { usePlaygroundState } from "@/app/components/playground/PlaygroundState";
 
-const WIDTH = 260;
-const HEIGHT = 180;
+const WIDTH = 248;
+const HEIGHT = 170;
 const BALL_RADIUS = 9;
-const START = { x: 40, y: HEIGHT - 30 };
-const RIM = { x: 205, y: 46, halfWidth: 16 };
+const START = { x: 38, y: HEIGHT - 28 };
+const RIM = { x: 195, y: 44, halfWidth: 15 };
 const GRAVITY = 0.42;
 const PULL_POWER = 0.16;
 const MAX_PULL = 65;
@@ -59,6 +59,7 @@ export default function ShootaroundGame() {
 
     function toCanvasPoint(clientX: number, clientY: number) {
       const rect = canvas!.getBoundingClientRect();
+      if (!rect.width || !rect.height) return null;
       return {
         x: ((clientX - rect.left) / rect.width) * WIDTH,
         y: ((clientY - rect.top) / rect.height) * HEIGHT,
@@ -78,8 +79,10 @@ export default function ShootaroundGame() {
       const s = stateRef.current;
       if (s.phase !== "idle") return;
       const p = toCanvasPoint(e.clientX, e.clientY);
+      if (!p) return;
       const dist = Math.hypot(p.x - s.x, p.y - s.y);
       if (dist > BALL_RADIUS + 14) return;
+      e.preventDefault();
       s.phase = "dragging";
       canvas!.setPointerCapture(e.pointerId);
       setStatus("drag");
@@ -89,6 +92,8 @@ export default function ShootaroundGame() {
       const s = stateRef.current;
       if (s.phase !== "dragging") return;
       const p = toCanvasPoint(e.clientX, e.clientY);
+      if (!p) return;
+      e.preventDefault();
       const dx = p.x - START.x;
       const dy = p.y - START.y;
       const dist = Math.min(Math.hypot(dx, dy), MAX_PULL);
@@ -233,8 +238,7 @@ export default function ShootaroundGame() {
         ref={canvasRef}
         width={WIDTH}
         height={HEIGHT}
-        className="w-full touch-none rounded"
-        style={{ aspectRatio: `${WIDTH} / ${HEIGHT}` }}
+        className="touch-none rounded"
       />
     </div>
   );

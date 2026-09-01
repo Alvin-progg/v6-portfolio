@@ -67,18 +67,18 @@ export default async function GithubWidget() {
 
   return (
     <div
-      className="grid gap-[3px]"
+      className="grid w-full gap-[2px]"
       style={{ gridTemplateColumns: `repeat(${weeks?.length ?? 26}, 1fr)` }}
     >
       {(weeks ?? Array.from({ length: 26 }, () => ({ contributionDays: Array.from({ length: 7 }, () => ({ contributionCount: 0, date: "" })) }))).map(
         (week, weekIndex) => (
-          <div key={weekIndex} className="flex flex-col gap-[3px]">
+          <div key={weekIndex} className="flex flex-col gap-[2px]">
             {week.contributionDays.map((day, dayIndex) => {
               const level = levelFromCount(day.contributionCount);
               return (
                 <div
                   key={day.date || `${weekIndex}-${dayIndex}`}
-                  className="h-[7px] w-[7px] rounded-[1px] bg-fg"
+                  className="aspect-square w-full rounded-[1px] bg-fg"
                   style={{ opacity: LEVEL_OPACITY[level] }}
                   title={day.date ? `${day.contributionCount} contributions on ${day.date}` : undefined}
                 />
